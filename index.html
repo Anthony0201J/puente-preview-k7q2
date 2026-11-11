@@ -150,7 +150,7 @@ html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
 .cine .hero.in-stage,.cine .beat,.cine .payoff,.cine .meter{z-index:4}
 .cine .eyebrow{color:#9db8ff}
 @media (max-width:767px){.cine .word{width:100%;right:0;top:44%;font-size:21vw}}
-</style></head><body>
+.cine .payoff,.cine .payoff *,.cine .beat,.cine .word,.cine .shade,#film,#obj3d,.cine .meter{pointer-events:none!important}.cine .hero.in-stage a,.cine .hero.in-stage .btn{pointer-events:auto!important;position:relative;z-index:6}</style></head><body>
 <canvas id="scene" aria-hidden="true"></canvas>
 <header id="hdr">
  <a class="brand" href="#top" aria-label="Puente Studio home">
@@ -294,6 +294,7 @@ requestAnimationFrame(draw);if(reduce)draw(performance.now());
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.18});
 document.querySelectorAll('.rise,.step').forEach(function(el){io.observe(el)});
 document.querySelectorAll('.tog button').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true')})});
+document.querySelectorAll('a[href="#start"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.getElementById('start');if(!t)return;e.preventDefault();var y=t.getBoundingClientRect().top+scrollY-24;var d=document.documentElement;d.style.scrollBehavior='auto';window.scrollTo(0,y);d.style.scrollBehavior='';history.replaceState(null,'','#start')})});
 var f=document.getElementById('f'),msg=document.getElementById('msg');
 f.addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('em').value.trim();
  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){msg.className='msg err';msg.textContent='Please enter a valid email address.';return}
