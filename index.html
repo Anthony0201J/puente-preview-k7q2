@@ -138,9 +138,19 @@ h2{font-weight:600}
 #obj3d{position:absolute;right:1vw;top:4vh;width:60vw;height:90vh;pointer-events:none}.cine .stage:after{content:'';position:absolute;right:6vw;top:22vh;width:46vw;height:56vh;background:radial-gradient(closest-side,rgba(71,123,255,.28),rgba(71,123,255,0));z-index:1;pointer-events:none}
 .cine .shade{background:linear-gradient(90deg,rgba(7,8,11,.9) 0%,rgba(7,8,11,.55) 34%,rgba(7,8,11,0) 62%),linear-gradient(0deg,rgba(7,8,11,.85) 0%,rgba(7,8,11,0) 38%)}
 .cine .shade{z-index:2}.cine .hero.in-stage,.cine .beat,.cine .payoff,.cine .meter{z-index:3}
-#film{filter:saturate(.7) contrast(1.1)}
+#film{filter:saturate(.7) contrast(1.1);-webkit-mask-image:radial-gradient(70% 90% at 62% 58%,#000 25%,transparent 85%);mask-image:radial-gradient(70% 90% at 62% 58%,#000 25%,transparent 85%)}
 @media (max-width:767px){#obj3d{right:0;left:0;width:100%;height:52vh;top:6vh}.cine .ghost{font-size:34vw;top:30%}}
-.cine .stage{background-image:linear-gradient(rgba(7,8,11,.9),rgba(7,8,11,.9)),url(frames/d/001.webp)}@media (max-width:767px){.cine .stage{background-image:linear-gradient(rgba(7,8,11,.9),rgba(7,8,11,.9)),url(frames/m/001.webp)}}</style></head><body>
+.cine .stage{background-image:linear-gradient(rgba(7,8,11,.9),rgba(7,8,11,.9)),url(frames/d/001.webp)}@media (max-width:767px){.cine .stage{background-image:linear-gradient(rgba(7,8,11,.9),rgba(7,8,11,.9)),url(frames/m/001.webp)}}
+.cine .word{position:absolute;right:3vw;top:50%;width:54vw;transform:translateY(-30%);text-align:center;font-weight:800;letter-spacing:-.045em;line-height:.78;font-size:clamp(3.4rem,9.2vw,13rem);color:transparent;background:linear-gradient(180deg,rgba(231,233,238,.62) 0%,rgba(231,233,238,.26) 60%,rgba(231,233,238,.04) 100%);-webkit-background-clip:text;background-clip:text;pointer-events:none;z-index:1;white-space:nowrap;will-change:transform,opacity}
+.cine .stage:before{display:none;content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,transparent 0,transparent calc(50% - .5px),rgba(231,233,238,.05) 50%,transparent calc(50% + .5px)),linear-gradient(0deg,transparent 0,transparent calc(26% - .5px),rgba(231,233,238,.07) 26%,transparent calc(26% + .5px))}
+html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
+.cine .stage:after{display:none}#scene{display:none!important}
+#obj3d{right:3vw;top:4vh;width:60vw;height:88vh;z-index:2}
+.cine .shade{z-index:3}
+.cine .hero.in-stage,.cine .beat,.cine .payoff,.cine .meter{z-index:4}
+.cine .eyebrow{color:#9db8ff}
+@media (max-width:767px){.cine .word{width:100%;right:0;top:44%;font-size:21vw}}
+</style></head><body>
 <canvas id="scene" aria-hidden="true"></canvas>
 <header id="hdr">
  <a class="brand" href="#top" aria-label="Puente Studio home">
@@ -149,7 +159,7 @@ h2{font-weight:600}
  <a class="nav-cta" href="#start">Get started</a>
 </header>
 <main id="top">
-<section class="cine" data-theme="dark" id="cine"><div class="stage"><canvas id="film" aria-hidden="true"></canvas><canvas id="obj3d" aria-hidden="true"></canvas><div class="shade"></div><div class="hero in-stage">
+<section class="cine" data-theme="dark" id="cine"><div class="stage"><canvas id="film" aria-hidden="true"></canvas><div class="word" aria-hidden="true">ANSWERED</div><canvas id="obj3d" aria-hidden="true"></canvas><div class="shade"></div><div class="hero in-stage">
  <div class="eyebrow">AI answering for your business</div>
  <h1>Intelligence<br>in <em>motion.</em></h1>
  <p class="lead">An AI representative that answers your calls, chat and email, in English and Spanish.</p>
@@ -232,7 +242,7 @@ var cv=document.getElementById('scene'),cx=cv.getContext('2d'),W=0,H=0,dpr=Math.
 function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
 size();addEventListener('resize',size);
 
-var MX=0,MY=0,ghost={style:{}};addEventListener('pointermove',function(e){MX=e.clientX/innerWidth*2-1;MY=e.clientY/innerHeight*2-1},{passive:true});var MOB=innerWidth<768,N=MOB?73:145,DIR=MOB?'frames/m/':'frames/d/',imgs=new Array(N),film=document.getElementById('film'),fx=film.getContext('2d'),cine=document.getElementById('cine'),heroEl=cine.querySelector('.hero'),beat=document.getElementById('beat'),pay=document.getElementById('payoff'),meter=document.getElementById('meter'),pc=pay.querySelector('.pc'),fp=0,ft=0,lastP=-1,live=true,first=false,lastT=performance.now();
+var MX=0,MY=0,ghost=document.querySelector('.cine .word');addEventListener('pointermove',function(e){MX=e.clientX/innerWidth*2-1;MY=e.clientY/innerHeight*2-1},{passive:true});var MOB=innerWidth<768,N=MOB?73:145,DIR=MOB?'frames/m/':'frames/d/',imgs=new Array(N),film=document.getElementById('film'),fx=film.getContext('2d'),cine=document.getElementById('cine'),heroEl=cine.querySelector('.hero'),beat=document.getElementById('beat'),pay=document.getElementById('payoff'),meter=document.getElementById('meter'),pc=pay.querySelector('.pc'),fp=0,ft=0,lastP=-1,live=true,first=false,lastT=performance.now();
 function nm(i){return DIR+('00'+(i+1)).slice(-3)+'.webp'}
 var order=[0,N-1];(function sub(l,h){if(h-l<2)return;var m=(l+h)>>1;order.push(m);sub(l,m);sub(m,h)})(0,N-1);
 var seen={};order=order.filter(function(i){if(seen[i])return false;seen[i]=1;return true});for(var q=0;q<N;q++)if(!seen[q])order.push(q);
@@ -247,7 +257,7 @@ function fscroll(){var r=cine.getBoundingClientRect(),m=cine.offsetHeight-innerH
  var h=clamp((ft-.06)/.12);heroEl.style.opacity=1-h;heroEl.style.transform='translateY('+(-h*40)+'px)';heroEl.style.pointerEvents=h>.4?'none':'auto';
  var b=ft<.3?clamp((ft-.2)/.07):clamp((.46-ft)/.06);beat.style.opacity=b;beat.style.transform='translateY('+((1-b)*18)+'px)';
  var pp=clamp((ft-.58)/.08)*(ft>.97?clamp((1-ft)/.03):1);pay.style.opacity=pp;pc.style.transform='translateY('+((1-pp)*30)+'px) rotateX('+((1-pp)*14)+'deg)';
- var obj=document.getElementById('obj3d');film.style.opacity=(first?(0.14+clamp((ft-.12)/.3)*.86):0);obj.style.opacity=1-clamp((ft-.5)/.18);if(window.P3D){var vis=ft>-.01&&ft<1.01&&live;P3D.set(ft,MX,MY,vis)}ghost.style.transform='translateY(-54%) translateX('+((ft-.3)*-6)+'vw)';ghost.style.opacity=1-clamp((ft-.55)/.25)*.8;pay.className='payoff'+(ft>.62?' s1':'')+(ft>.7?' s2':'')+(ft>.8?' s3':'');meter.style.height=(ft*100)+'%'}
+ var obj=document.getElementById('obj3d');film.style.opacity=(first?(0.05+clamp((ft-.12)/.3)*.95):0);obj.style.opacity=1-clamp((ft-.5)/.18);if(window.P3D){var vis=ft>-.01&&ft<1.01&&live;P3D.set(ft,MX,MY,vis)}ghost.style.transform='translateY(-30%) translateX('+((ft-.2)*-9)+'vw)';ghost.style.opacity=(1-clamp((ft-.5)/.18)).toFixed(3);pay.className='payoff'+(ft>.62?' s1':'')+(ft>.7?' s2':'')+(ft>.8?' s3':'');meter.style.height=(ft*100)+'%'}
 function loop(now){requestAnimationFrame(loop);var dt=Math.min(.05,(now-lastT)/1000);lastT=now;fscroll();if(!first||!live)return;var al=reduce?1:1-Math.exp(-dt*9);fp+=(ft-fp)*al;if(Math.abs(ft-fp)<.0003)fp=ft;var pos=fp*(N-1);if(Math.abs(pos-lastP)>.01){lastP=pos;paint(pos)}}
 fsize();addEventListener('resize',fsize);requestAnimationFrame(loop);
 
