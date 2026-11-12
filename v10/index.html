@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Puente Studio — Intelligence in motion</title>
+<meta name="description" content="Puente Studio: an AI representative that answers your calls, chat and email, in English and Spanish.">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#07080b">
+<link rel="stylesheet" href="css/site.css">
+</head><body>
+<div class="load" id="load" aria-hidden="true"><svg viewBox="0 0 120 60" fill="none" stroke="#477BFF" stroke-width="2.4" stroke-linecap="round"><path d="M8 48 A52 46 0 0 1 112 48 M8 48 H44 L52 24 L62 62 L70 40 H112" transform="translate(0,-6)"/></svg><div class="ct" id="ct">00</div></div>
+<div class="cur" id="cur"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<header class="hdr">
+  <a class="brand" href="#hero"><svg viewBox="0 0 34 22" fill="none" stroke="#477BFF" stroke-width="2" stroke-linecap="round"><path d="M2 20 A15 17 0 0 1 32 20 M2 20 H12 L15 9 L19 24 L22 15 H32"/></svg>Puente Studio</a>
+  <nav class="nav"><a href="#agents">Agents</a><a href="#demo">Demo</a><a href="#automate">Automate</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  <a class="pill" href="#start">Get started</a>
+</header>
+<main>
+<section id="hero" data-k="0"><div class="wrap l"><div class="txt">
+  <div class="eyebrow rise">AI answering for your business</div>
+  <h1 class="rise d1">Intelligence<br>in <i>motion.</i></h1>
+  <p class="sub rise d2">An AI representative that answers your calls, chat and email, in English and Spanish.</p>
+  <div class="row rise d3"><a class="pill solid" href="#start">Get started</a><a class="pill" href="#demo">Hear a simulated call</a></div>
+</div><div class="ghost" aria-hidden="true">PUENTE</div><div class="tech" aria-hidden="true"><span class="c">Calls · Chat · Email</span><span class="b">EN / ES</span><span class="a">(SYS.01 — 2026)</span></div></div></section>
+
+<section id="agents" data-k="1"><div class="wrap r"><div class="txt">
+  <div class="eyebrow rise">01 — Meet your representative</div>
+  <h2 class="rise d1">One voice.<br>Every <i>channel.</i></h2>
+  <p class="sub rise d2">Puente is an AI representative built for your business. It answers live calls, chat and email, and it tells people it is an AI in its first sentence.</p>
+  <div class="langs rise d3"><span>EN English</span><span>ES Español</span></div>
+</div></div></section>
+
+<section id="demo" data-k="2"><div class="wrap l"><div class="txt">
+  <div class="eyebrow rise">02 — Try it</div>
+  <h2 class="rise d1">Hear how a call<br><i>begins.</i></h2>
+  <p class="sub rise d2">Pick a language and a business. This is a scripted simulation, not a live call and not a real customer.</p>
+</div><div class="card phone rise d2" id="phone">
+  <div class="top"><span>Incoming · Puente</span><span class="badge">Simulated demo</span></div>
+  <div class="seg" id="lang"><button class="on" data-v="en">English</button><button data-v="es">Español</button></div>
+  <div class="seg" id="biz"><button class="on" data-v="bike">Bike shop</button><button data-v="dent">Dental</button><button data-v="rest">Restaurant</button></div>
+  <div class="call" id="call"><div class="idle" id="idle"><div class="ring"></div>Press start to simulate an incoming call.</div></div>
+  <div class="act"><button class="pill solid" id="go">Start call</button><button class="pill" id="end" disabled>End call</button></div>
+  <div class="note" id="dnote">Scripted example. Spanish copy is pending native review.</div>
+</div></div></section>
+
+<section id="automate" data-k="3"><div class="wrap r"><div class="txt">
+  <div class="eyebrow rise">03 — What it handles</div>
+  <h2 class="rise d1">Every customer<br>gets an <i>answer.</i></h2>
+  <div class="list">
+    <div class="it rise"><span class="n">01</span><div><h3>Live calls</h3><p>Answered by an AI representative built for your business.</p></div></div>
+    <div class="it rise d1"><span class="n">02</span><div><h3>Chat</h3><p>Questions answered on your site, in English or Spanish.</p></div></div>
+    <div class="it rise d2"><span class="n">03</span><div><h3>Email</h3><p>Replies that follow your schedule, not ours.</p></div></div>
+  </div>
+</div></div></section>
+
+<section id="honest" data-k="4"><div class="wrap l"><div class="txt">
+  <div class="eyebrow rise">04 — How a call begins</div>
+  <h2 class="rise d1">Honest from<br>the first <i>sentence.</i></h2>
+  <p class="sub rise d2">On every call, the AI says what it is before anything else.</p>
+  <p class="quote rise d3">“Hi, I'm an AI assistant for your business. How can I help?” <small style="font:500 10px var(--mono);letter-spacing:.14em;color:var(--dim)">(EXAMPLE)</small></p>
+  <p class="sub rise d3">English or Spanish, the caller chooses and the conversation follows. It works the hours you set.</p>
+</div></div></section>
+
+<section id="dash" data-k="5"><div class="wrap r"><div class="txt">
+  <div class="eyebrow rise">05 — Your dashboard</div>
+  <h2 class="rise d1">Yours alone.<br>Set <i>once.</i></h2>
+  <p class="sub rise d2">Each client gets their own dashboard, their own plan, and their own AI representative, set to their availability.</p>
+  <div class="card dash rise d3">
+    <div class="h"><span>Your representative</span><span>Example</span></div>
+    <div class="g"><span>Channels</span><div class="chips"><b class="on">Calls</b><b class="on">Chat</b><b class="on">Email</b></div></div>
+    <div class="g"><span>Languages</span><div class="chips"><b class="on">English</b><b class="on">Español</b></div></div>
+    <div class="g"><span>Available</span><div class="chips"><b class="on">Mon</b><b class="on">Tue</b><b class="on">Wed</b><b class="on">Thu</b><b class="on">Fri</b><b>Sat</b><b>Sun</b></div></div>
+  </div>
+</div></div></section>
+
+<section id="pricing" data-k="6"><div class="wrap" style="display:block"><div class="center">
+  <div class="eyebrow rise">06 — Pricing</div>
+  <h2 class="rise d1">Plain prices.<br><i>No surprises.</i></h2>
+  <div class="plans">
+    <div class="card plan rise d1"><h3>Live calls</h3><div class="p">$299<small> /month</small></div><ul style="text-align:left"><li>AI answers your business calls</li><li>Discloses it is an AI, every call</li><li>Your own dashboard and representative</li></ul></div>
+    <div class="card plan rise d2"><h3>Calls + chat + email</h3><div class="p">$499<small> /month</small></div><ul style="text-align:left"><li>Everything in Live calls</li><li>Chat answered</li><li>Email answered</li></ul></div>
+  </div>
+  <p class="fine rise d3"><b>$500</b> one-time setup · <b>+$100/month</b> bilingual English / Spanish</p>
+</div></div></section>
+
+<section id="faq" data-k="7"><div class="wrap l"><div class="txt">
+  <div class="eyebrow rise">07 — Questions</div>
+  <h2 class="rise d1">Quick<br><i>answers.</i></h2>
+  <div style="margin-top:34px" class="rise d2">
+    <details><summary>Will callers know it's an AI?</summary><p>Yes. On calls, the AI says it is an AI in its first sentence.</p></details>
+    <details><summary>Which languages?</summary><p>English and Spanish. Bilingual is +$100 per month.</p></details>
+    <details><summary>Which channels?</summary><p>Live calls only, or live calls with chat and email.</p></details>
+    <details><summary>When does it answer?</summary><p>When you set it to. Your availability lives in your dashboard.</p></details>
+    <details><summary>What does it cost?</summary><p>$500 setup, then $299 per month for live calls or $499 per month for calls, chat and email. Bilingual adds $100 per month.</p></details>
+  </div>
+</div></div></section>
+
+<section id="start" data-k="8"><div class="wrap" style="display:block"><div class="center">
+  <div class="eyebrow rise">08 — Get started</div>
+  <h2 class="rise d1">Put your business<br>in <i>motion.</i></h2>
+  <form id="form" class="rise d2" novalidate><input id="em" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email"><button class="pill solid" type="submit">Get started</button><div class="msg" id="msg" role="status"></div></form>
+  <p class="note" style="text-align:center;margin-top:10px">Preview only — nothing is sent or stored.</p>
+</div></div></section>
+</main>
+<footer><span>Puente Studio</span><span>Intelligence in motion.</span></footer>
+<script src="js/page.js"></script>
+<script src="js/gl.js" defer></script>
+</body></html>
